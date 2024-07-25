@@ -23,9 +23,7 @@ function App(): JSX.Element {
         App deployed to Vercel by Y Le
       </div>
       <div>
-        <a href="https://electron-vite-xi.vercel.app/" target="_blank" rel="noreferrer">
-            Web Version
-        </a>
+       https://electron-vite-xi.vercel.app/
       </div>
       <p className="tip">
         Please try pressing <code>F12</code> to open the devTool
