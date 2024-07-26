@@ -11,6 +11,14 @@ function App(): JSX.Element {
     }
   }
 
+  const openSpotify = (): void => {
+    if (isElectronEnv()) {
+      window.electron.ipcRenderer.send('open-spotify')
+    } else {
+      alert('This feature is only available in Electron')
+    }
+  }
+
   return (
     <>
       <img alt="logo" className="logo" src={electronLogo} />
@@ -18,12 +26,6 @@ function App(): JSX.Element {
       <div className="text">
         Build an Electron app with <span className="react">React</span>
         &nbsp;and <span className="ts">TypeScript</span>
-      </div>
-      <div className="text">
-        App deployed to Vercel by Y Le
-      </div>
-      <div>
-       https://electron-vite-xi.vercel.app/
       </div>
       <p className="tip">
         Please try pressing <code>F12</code> to open the devTool
@@ -37,6 +39,11 @@ function App(): JSX.Element {
         <div className="action">
           <a target="_blank" rel="noreferrer" onClick={openNetFlix}>
             Open NetFlix (Electron version only)
+          </a>
+        </div>
+        <div className="action">
+          <a target="_blank" rel="noreferrer" onClick={openSpotify}>
+            Open Spotify (Electron version only)
           </a>
         </div>
       </div>
